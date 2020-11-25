@@ -6,7 +6,7 @@
   <span class="spacer"></span>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item routerLink="/projects">
       <mat-icon>home</mat-icon>
       <span>Projects</span>
     </button>
@@ -15,6 +15,5 @@
 
 <mat-spinner></mat-spinner>
 <h1>Work in Progress</h1>
-<!--<mat-selection-list #projects [multiple]="false">-->
-<!--  <mat-list-option value="hello">world</mat-list-option>-->
-<!--</mat-selection-list>-->
+
+<router-outlet></router-outlet>
