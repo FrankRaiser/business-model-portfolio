@@ -1,1 +1,25 @@
-<p>projects works!</p>
+<div *ngIf="!projects">
+  <mat-spinner></mat-spinner>
+  <span>Retrieving projects..</span>
+</div>
+<div *ngIf="projects">
+
+  <form class="project-create">
+    <mat-form-field>
+      <mat-label>Project name</mat-label>
+      <input [(ngModel)]="project.name" name="name" matInput placeholder="Please provide a unique project name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Access password</mat-label>
+      <input #projectPw [(ngModel)]="project.password" name="pass" type="password" matInput placeholder="Password will be required for full access">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="accessProject()">{{buttonText}}</button>
+
+  </form>
+
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let project of projects" value="project"
+      (click)="selectProject(project)">{{project}}</mat-list-option>
+  </mat-selection-list>
+</div>

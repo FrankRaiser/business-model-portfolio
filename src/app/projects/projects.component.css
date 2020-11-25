@@ -1,0 +1,6 @@
+.project-create {
+  display: flex;
+  border: 1px solid #8a8a8a;
+  padding: 10px;
+  flex-direction: column;
+}
